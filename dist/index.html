@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline';script-src 'self' 'unsafe-eval';">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline';script-src 'self' 'unsafe-eval';"> -->
+
+    <link rel="stylesheet" href="css/style.css" id="style">
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <!-- font awesome -->
+    <script src="libs/all.min.js"></script>
+    <link rel="stylesheet" href="libs/all.min.css">
+    <!-- ID3 reader -->
+    <script src="libs/id3-minimized.js"></script>
+    <title>Playit</title>
+</head>
+
+<body>
+    <div class="music-loading">
+        <div>
+            <img src="assets/images/rolling.gif" width="60px" alt="">
+            <span>Wait...</span>
+        </div>
+    </div>
+    <div class="loading">
+        <div>
+            <div>
+                <img src="assets/logo/color/logo_blue.svg" width="100px" alt="Loading..." srcset="">
+            </div>
+            <br>
+            <div>
+                <img src="assets/images/rolling.gif" width="85px" alt="">
+            </div>
+
+        </div>
+        <div class="msg">
+
+        </div>
+
+    </div>
+
+    <div class="overlay">
+
+    </div>
+
+    <div class="main-body">
+        <div class="pi-sidebar shadow">
+            <div class="pi-logo-item">
+                <img src="assets/logo/white/logo_blue.svg" alt="" width="130px" srcset="">
+            </div>
+            <hr style="margin:0px;">
+            <br>
+
+            <div class="pi-nav-items">
+
+                <div class="pi-nav-item nav-home">
+                    <span class="pr-2"><i class="fa fa-home    "></i> </span>
+                    <span>Home</span>
+                </div>
+                <div class="pi-nav-item nav-music">
+                    <span class="pr-2"><i class="fa fa-music    "></i> </span>
+                    <span>Music</span>
+                </div>
+                <div class="pi-nav-item nav-playlists">
+                    <span class="pr-2"><i class="fas fa-list    "></i> </span>
+                    <span>Playlists</span>
+                </div>
+                <div class="pi-nav-item nav-recorder">
+                    <span class="pr-2"><i class="fas fa-microphone    "></i> </span>
+                    <span>Recorder</span>
+                </div>
+                <div class="pi-nav-item nav-favorites">
+                    <span class="pr-2"><i class="fa fa-heart    "></i> </span>
+                    <span>Favorites</span>
+                </div>
+                <hr>
+                <div class="pi-nav-item nav-radio d-flex">
+                    <div class="w-75">
+                        <span class="pr-2"><i class="fa fa-wifi    "></i> </span>
+                        <span>Radio</span>
+                    </div>
+                    <div class="w-25">
+                        <span
+                            style="padding: 5px 10px; background-color: var(--pi-blue); color:white; border-radius: 20px;">soon</span>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="main" id="main">
+
+        </div>
+        <div class="player" id="player">
+            <div class="music-progress">
+                <input type="range" class="uk-range" value="0" id="range">
+                <div class="prog">
+                    <div class="prog-bar" id="prog"></div>
+                </div>
+            </div>
+            <div class="infos-options">
+                <div class="infos">
+                    <div class="song-cover">
+                        <img src="assets\images\cover.png" alt="">
+                    </div>
+                    <div class="song-infos">
+                        <span class="song-name" id="song-name">Title</span>
+                        <br id="br-song">
+                        <span class="song-artist" id="song-artist">
+                            Artist
+                        </span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="controls--loop">
+                        <i class="fas fa-sync    "></i>
+                    </div>
+                    <div class="controls-main">
+                        <div class="controls-previus">
+                            <i class="fa fa-backward" aria-hidden="true"></i>
+                        </div>
+                        <div class="controls--play">
+                            <i class="fa fa-play" aria-hidden="true"></i>
+                        </div>
+                        <div class="controls-next">
+                            <i class="fa fa-forward" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="controls--random">
+                        <i class="fa fa-random" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="options">
+                    <div class="time-range">
+                        <span>0:00 / 0:00</span>
+                    </div>
+                    <div class="options--volume">
+                        <span><i class="fa fa-volume-up    "></i></span>
+                        <div class="volume-range">
+                            <input type="range" name="" id="volume-inp" class="volume-inp" value="50" min="0" max="100">
+                        </div>
+                    </div>
+                    <div class="options-minimize">
+                        <span><i class="fa fa-window-restore" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="options--more-options">
+                        <span id="more-options"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span>
+                        <div class="more-options-dropdown" id="more-options-dropdown">
+                            <div class="item" id="add-to-favorites">
+                                <span><i class="fa fa-heart mr-2" aria-hidden="true"></i> add to favorites</span>
+                            </div>
+                            <div class="item" id="add-to-a-playlist">
+                                <span><i class="fa fa-list mr-2" aria-hidden="true"></i> add to a playlist</span>
+                            </div>
+                            <div class="item" id="reveal-in-file-exp">
+                                <span><i class="fa fa-edit mr-2" aria-hidden="true"></i>Edit song infos</span>
+                            </div>
+
+
+                            <div class="item" id="delete">
+                                <span><i class="fas fa-trash mr-2"></i> Delete</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="libs/recorder.js"></script>
+    <script src="min-js/scripts.js"></script>
+</body>
+
+</html>

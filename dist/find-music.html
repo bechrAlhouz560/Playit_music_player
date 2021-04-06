@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/find-music.css">
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/all.min.css">
+    <script src="libs/all.min.js"></script>
+    <script src="libs/id3-minimized.js"></script>
+    <title>Find Music</title>
+</head>
+<body>
+    <div class="loading">
+        <div class="loading-infos">
+            <div class="rolling-img">
+                <img src="assets\images\rolling.gif" width="80px" alt="">
+            </div>
+            <div class="msg mt-3">
+                <h6>Loading Music...</h6>
+                <span class="infos"></span>
+            </div>
+        </div>
+    </div>
+    <div class="loading-1">
+        <div>
+            <div>
+                <img src="assets/logo/color/logo_blue.svg" width="100px" alt="Loading..." srcset="">
+            </div>
+            <br>
+            <div>
+                <img src="assets/images/rolling.gif" width="85px" alt="">
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="pi-modal">
+        <div class="header">
+            <h1>Find your music</h1>
+            <p class="m-0 p-0">Find your music from your desktop folders</p>
+        </div>
+        <div class="body">
+            <h3 style="margin-top: 0;
+                 font-size: 30px;
+                 margin-bottom: 15px;">Music Folders: </h3>
+            <hr>
+            <div class="folder-list">
+            </div>
+            <div class="add-folder">
+                <span><i class="fa fa-folder-plus" aria-hidden="true"></i></span>
+            </div>
+
+        </div>
+        <div class="card-footer d-flex justify-content-center">
+            <button type="button" class="pl-btn btn-primary" id="done"><i class="fa fa-arrow-right mr-3" aria-hidden="true"></i> Continue</button>
+        </div>
+
+
+    </div>
+    <script src="find-music.js"></script>
+</body>
+</html>
